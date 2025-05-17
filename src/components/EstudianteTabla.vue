@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div v-show="mostrar">
+      <h1>Estudiante Guardado</h1>
+    </div>
     <label for="id_nombre">Nombre: </label>
     <input v-model="nuevoNombre" id="id_nombre" type="text" />
     <label for="id_apellido">Apellido: </label>
@@ -11,15 +14,31 @@
     <label for="id_semestre">Semestre: </label>
     <input v-model="nuevoSemestre" id="id_semestre" type="number" />
     <button v-on:click="agregarEstudiante()">Agregar</button>
-    <ul>
-      <li
-        v-for="{ nombre, apellido, edad, genero, semestre } in lista"
-        :key="nombre"
-      >
-        Nombre: {{ nombre }} - Apellido: {{ apellido }} - Edad: {{ edad }} -
-        G&eacute;nero: {{ genero }} - Semestre: {{ semestre }}
-      </li>
-    </ul>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Edad</th>
+          <th>G&eacute;nero</th>
+          <th>Semestre</th>
+          <th>Bot&oacute;n Ver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="{ nombre, apellido, edad, genero, semestre } in lista"
+          :key="nombre"
+        >
+          <td>{{ nombre }}</td>
+          <td>{{ apellido }}</td>
+          <td>{{ edad }}</td>
+          <td>{{ genero }}</td>
+          <td>{{ semestre }}</td>
+          <td><button>Ver</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -83,6 +102,7 @@ export default {
           semestre: 8,
         },
       ],
+      mostrar: false,
     };
   },
   methods: {
@@ -96,6 +116,9 @@ export default {
       };
       //this.lista.unshift(nuevo);
       this.lista.push(nuevo);
+      this.mostrar=true;
+
+      setTimeout(() => {this.mostrar=false}, 3000);
     },
   },
 };
@@ -139,18 +162,45 @@ button {
   font-weight: bold;
 }
 
-ul {
-  list-style: none;
-  margin-top: 50px;
+table {
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  background-color: white;
+  margin-top: 25px;
 }
 
-li {
-  background: #f8f9fa;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  color: #333;
+td, th {
+  text-align: center;
+  padding: 8px;
+}
+
+td {
+  border-right: 1px solid #f8f8f8;
   font-size: 20px;
 }
 
+th {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+thead, th {
+  color: #ffffff;
+  background: #4fc3a1;
+}
+
+thead th:nth-child(odd) {
+  color: #ffffff;
+  background: #324960;
+}
+
+tr:nth-child(even) {
+  background: #f8f8f8;
+}
 </style>
