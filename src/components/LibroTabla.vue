@@ -123,7 +123,7 @@ export default {
         nuevo.anioPublicacion <= 0 ||
         nuevo.numPaginas <= 0
       ) {
-        console.log("Error: Existen campos vacios");
+        console.log("Error: Existen campos vacios o invalidos");
       } else {
         this.lista.push(nuevo);
         this.mostrar = true;
@@ -208,7 +208,7 @@ th {
   display: table-cell;
   padding: 10px;
   text-align: left;
-  border: 1px solid #2a3440;
+  border: 1px solid #374454;
 }
 
 th {

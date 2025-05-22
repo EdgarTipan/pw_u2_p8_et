@@ -3,7 +3,8 @@
   <!-- <ContadorView/> -->
   <!-- <EstudianteView/> -->
   <!-- <EstudianteTablaViewVue/> -->
-  <LibroTablaView/>
+  <!-- <LibroTablaView/> -->
+  <PreguntaView/>
 </template>
 
 <script>
@@ -12,6 +13,7 @@ import ContadorView from "@/views/ContadorView.vue";
 import EstudianteView from "@/views/EstudianteView.vue";
 import EstudianteTablaViewVue from '@/views/EstudianteTablaView.vue';
 import LibroTablaView from '@/views/LibroTablaView.vue';
+import PreguntaView from '@/views/PreguntaView.vue';
 
 export default {
   name: "App",
@@ -21,6 +23,7 @@ export default {
     EstudianteView,
     EstudianteTablaViewVue,
     LibroTablaView,
+    PreguntaView,
   },
 };
 </script>
