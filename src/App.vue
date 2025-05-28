@@ -4,16 +4,18 @@
   <!-- <EstudianteView/> -->
   <!-- <EstudianteTablaViewVue/> -->
   <!-- <LibroTablaView/> -->
-  <PreguntaView/>
+  <!-- <PreguntaView/> -->
+  <RandomUserView />
 </template>
 
 <script>
 import HolaMundoView from "@/views/HolaMundoView.vue";
 import ContadorView from "@/views/ContadorView.vue";
 import EstudianteView from "@/views/EstudianteView.vue";
-import EstudianteTablaViewVue from '@/views/EstudianteTablaView.vue';
-import LibroTablaView from '@/views/LibroTablaView.vue';
-import PreguntaView from '@/views/PreguntaView.vue';
+import EstudianteTablaViewVue from "@/views/EstudianteTablaView.vue";
+import LibroTablaView from "@/views/LibroTablaView.vue";
+import PreguntaView from "@/views/PreguntaView.vue";
+import RandomUserView from "./views/RandomUserView.vue";
 
 export default {
   name: "App",
@@ -24,6 +26,7 @@ export default {
     EstudianteTablaViewVue,
     LibroTablaView,
     PreguntaView,
+    RandomUserView,
   },
 };
 </script>
